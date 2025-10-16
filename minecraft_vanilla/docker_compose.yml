@@ -11,6 +11,7 @@ services:
       MAX_MEMORY: 8G
       SERVER_NAME: "minecraft_vanilla"
       MOTD: "The Joe Server"
+      ENABLE_WHITELIST: true
       ICON: "https://cdn.discordapp.com/icons/693216188599238678/25b710db6fad4c4415f0d3f55b8e288f.png?size=160&quality=lossless"
     volumes:
       - /data/minecraft_vanilla_data:/data
