@@ -5,6 +5,7 @@ services:
     stdin_open: true
     ports:
       - "25565:25565"
+    restart: unless-stopped
     environment:
       EULA: "TRUE"
       TYPE: "FABRIC"
@@ -14,10 +15,10 @@ services:
       PREVENT_PROXY_CONNECTIONS: "true"
       TZ: "Europe/Copenhagen"
       ENABLE_WHITELIST: true
-      COPY_PLUGINS_SRC: /plugins-common
+      COPY_PLUGINS_SRC: /plugins
       MOTD: "The Joe Server"
       ICON: "https://cdn.discordapp.com/icons/693216188599238678/25b710db6fad4c4415f0d3f55b8e288f.png?size=160&quality=lossless"
     volumes:
-      - /data/minecraft_vanilla_data:/data
-      - /data/minecraft_vanilla_data/plugins:/plugins
-      - /data/minecraft_vanilla_data/config:/config
+      - /fastdata/minecraft_vanilla_data:/data
+      - /fastdata/minecraft_vanilla_data/plugins:/plugins
+      - /fastdata/minecraft_vanilla_data/config:/config
